@@ -1,0 +1,59 @@
+# ─── Deploy to GitHub Pages ───
+# Builds the Vite project and publishes the result via GitHub Pages on
+# every push to main. Uses GitHub's official Pages-from-Actions model
+# (no gh-pages branch needed). The custom domain is configured via the
+# CNAME file in public/, which Vite copies into dist/ during build.
+#
+# Manual trigger is also enabled (workflow_dispatch) so you can
+# redeploy from the GitHub UI without a code change.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

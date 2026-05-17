@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Instrument+Serif:ital@0;1&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  color: #1A1A1A;
+  background: #FAFAF8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ─── Shared animations ─── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ─── Responsive adjustments ───
+   The codebase otherwise relies on inline styles plus auto-fit
+   minmax() grids for fluid layout. These media queries cover the
+   handful of cases where a CSS hook is the cleanest fix:
+
+   • LayerIndicator on topic pages — three uppercase labels + two
+     separator lines overflow a 375px viewport. At ≤600px we hide
+     the labels and separators, leaving just the three dots, which
+     still convey position in the The Question → Activities →
+     Learning Notes flow.
+
+   • About page section nav — five "Our X" labels with middle-dot
+     separators wrap to multiple lines on phones, and the dots look
+     odd at the wrap points. At ≤500px we hide the separators and
+     let the labels stack naturally; the warm-background panel
+     still reads as a TOC.
+
+   • PlaylistPanel — the floating quick-add pill at the bottom-right
+     of every page has fixed 24px margins. On phones we tighten
+     those margins, drop the "View →" affordance (tapping the pill
+     navigates anyway), and shorten the descriptive text.            */
+
+@media (max-width: 600px) {
+  .layer-indicator-label,
+  .layer-indicator-sep {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-section-nav-sep {
+    display: none;
+  }
+  .about-section-nav {
+    padding: 14px 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .playlist-quickadd {
+    bottom: 12px !important;
+    right: 12px !important;
+    left: 12px !important;
+  }
+  .playlist-quickadd-view {
+    display: none;
+  }
+}
