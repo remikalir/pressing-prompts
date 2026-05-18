@@ -40,8 +40,7 @@ export default function BlogPage() {
           Blog
         </h1>
         <p style={{ fontSize: "16px", lineHeight: 1.7, color: T.text2 }}>
-          Posts arrive after launch — perspectives on AI in higher education, classroom
-          experiments, conversations with educators using these prompts in their teaching.
+          Coming soon...
         </p>
       </section>
       <Footer />

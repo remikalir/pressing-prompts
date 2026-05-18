@@ -49,22 +49,22 @@ export const BROWSE_ACTIVITIES = built;
 // Type metadata for the browse cards on the homepage
 export const TYPE_META = {
   convo: {
-    label: "Conversation Starters",
-    description: "No-prep prompts for quick classroom discussions",
+    label: "Browse Conversation Starters",
+    description: "View all no-prep questions for quick classroom discussions, click to build a playlist",
     badge: "💬",
     badgeColor: "#E3F2FD",
     badgeText: "#1565C0",
   },
   active: {
-    label: "Student-Centered Learning",
-    description: "Structured activities with step-by-step guidance",
+    label: "Browse Student-Centered Learning",
+    description: "View all structured activities with step-by-step guidance, click to build a playlist",
     badge: "⚡",
     badgeColor: "#FFF3E0",
     badgeText: "#E65100",
   },
   discipline: {
-    label: "Disciplinary Extensions",
-    description: "Discipline-specific explorations for advanced courses",
+    label: "Browse Disciplinary Extensions",
+    description: "View all discipline-specific explorations for advanced courses, click to build a playlist",
     badge: "🎓",
     badgeColor: "#F3E5F5",
     badgeText: "#7B1FA2",
