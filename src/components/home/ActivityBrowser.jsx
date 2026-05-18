@@ -124,7 +124,7 @@ export default function ActivityBrowser() {
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
               <div style={{ fontFamily: T.sans, fontSize: "13px", color: T.text3 }}>
                 Showing <strong style={{ color: T.text1 }}>{browseActivities.length}</strong>{" "}
-                {TYPE_META[browseType].label.toLowerCase()} across all topics
+                {TYPE_META[browseType].descriptor.toLowerCase()} across all topics
               </div>
               <button
                 onClick={() => setBrowseType(null)}

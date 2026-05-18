@@ -160,7 +160,7 @@ export default function PlaylistPage() {
         </h1>
         <p style={{ fontSize: "16px", lineHeight: 1.7, color: T.text2, marginBottom: "40px" }}>
           {empty
-            ? "Your playlist is empty. Browse the activities on any topic page or the homepage and click the + button to add them here."
+            ? "Your playlist is empty. Browse all activities on the homepage, use the playlist builder, and click the + button to add activities that will display here."
             : `${items.length} ${items.length === 1 ? "activity" : "activities"} ready to take into your classroom.`}
         </p>
 
