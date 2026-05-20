@@ -37,7 +37,7 @@ for (const [topicId, content] of Object.entries(TOPIC_CONTENT)) {
     built.push({
       id: de.id,
       topic: topicId,
-      title: de.discipline,
+      title: de.prompt,
       type: "discipline",
       discipline: de.discipline,
     });
