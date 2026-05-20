@@ -1,0 +1,23 @@
+{
+  "name": "Pressing Prompts",
+  "short_name": "Pressing Prompts",
+  "description": "An open collection of activities, resources, and pedagogical guidance for higher education instructors bringing AI ethics into their classrooms.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#2E2A28",
+  "background_color": "#FAFAF8",
+  "display": "standalone",
+  "start_url": "/"
+}
