@@ -84,7 +84,7 @@ export const buildsContent = {
       ],
       resources: [
         { title: "Bartholomew, J. (2025). \"Uncovering the labor exploitation that powers AI.\" Columbia Journalism Review.", url: "https://www.cjr.org/tow_center/qa-uncovering-the-labor-exploitation-that-powers-ai.php" },
-        { title: "Gray, M. & Suri, S. (2019). Ghost Work. Houghton Mifflin Harcourt.", url: "https://find.library.duke.edu/?q=%22Suri%2C+Siddharth%22&search_field=author" },
+        { title: "Gray, M. & Suri, S. (2019). Ghost Work. Houghton Mifflin Harcourt.", url: "https://search.worldcat.org/title/1052904468" },
       ],
     },
     {

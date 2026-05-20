@@ -91,7 +91,7 @@ export const friendContent = {
         "Stays open to different viewpoints and expresses ideas constructively",
       ],
       resources: [
-        { title: "Georgetown University Law School (2025). [Tech Brief: AI Sycophancy & OpenAI](https://www.law.georgetown.edu/tech-institute/research-insights/insights/tech-brief-ai-sycophancy-openai-2/). Institute for Technology Law & Policy.", url: "https://www.law.georgetown.edu/tech-institute/research-insights/insights/tech-brief-ai-sycophancy-openai-2/" },
+        { title: "Georgetown University Law School (2025). Tech Brief: AI Sycophancy & OpenAI. Institute for Technology Law & Policy.", url: "https://www.law.georgetown.edu/tech-institute/research-insights/insights/tech-brief-ai-sycophancy-openai-2/" },
       ],
     },
     {
@@ -150,7 +150,7 @@ export const friendContent = {
         "Listens actively and participates in whole-class discussion",
       ],
       resources: [
-        { title: "MIT Sloan Teaching & Learning Technologies. [Effective Prompts for AI: The Essentials](https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/).", url: "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/" },
+        { title: "MIT Sloan Teaching & Learning Technologies. Effective Prompts for AI: The Essentials.", url: "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/" },
       ],
     },
     {
@@ -191,7 +191,7 @@ export const friendContent = {
         "Active listening — building on peers' ideas and helping the class develop a shared understanding",
       ],
       resources: [
-        { title: "Last Week Tonight with John Oliver. [AI Chatbots](https://youtu.be/Ykvf3MunGf8?si=XX5m9sRaYrbiI9nU) (29 min video).", url: "https://youtu.be/Ykvf3MunGf8?si=XX5m9sRaYrbiI9nU" },
+        { title: "Last Week Tonight with John Oliver. AI Chatbots (29 min video).", url: "https://youtu.be/Ykvf3MunGf8?si=XX5m9sRaYrbiI9nU" },
       ],
     },
   ],

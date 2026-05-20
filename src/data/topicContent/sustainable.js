@@ -129,7 +129,7 @@ export const sustainableContent = {
   ],
 
   pageNotes: [
-    { id: 1, text: "Hao, K. (2025). *Empire of AI: Dreams and Nightmares in Sam Altman's OpenAI* (pp. 276). Penguin Press." },
+    { id: 1, text: "Hao, K. (2025). [*Empire of AI: Dreams and Nightmares in Sam Altman's OpenAI*](https://search.worldcat.org/title/1482119829) (pp. 276). Penguin Press." },
     { id: 2, text: "Luccioni, S., Jernite, Y., & Strubell, E. (2024). [Power Hungry Processing: Watts Driving the Cost of AI Deployment?](https://doi.org/10.1145/3630106.3658542) *The 2024 ACM Conference on Fairness, Accountability, and Transparency*, 85–99." },
   ],
 

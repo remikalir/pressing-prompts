@@ -138,10 +138,10 @@ export const needContent = {
     { title: "Mozilla Foundation. (2017–present). IRL: Online Life is Real Life.", url: "https://irlpodcast.org/" },
     { title: "Bender, E. & A. Hanna. (2023–). Mystery AI Hype Theater 3000.", url: "https://www.buzzsprout.com/2126417" },
     { title: "Hicks, M. T., Humphries, J., & Slater, J. (2024). \"ChatGPT is bullshit.\" Ethics and Information Technology, 26(2), 38.", url: "https://doi.org/10.1007/s10676-024-09775-5" },
-    { title: "Bender, E. & A. Hanna. (2025). The AI Con: How to fight Big Tech's hype and create the future we want. Harper Collins.", url: "https://find.library.duke.edu/catalog/DUKE99119765245908501" },
-    { title: "Hao, K. (2025). Empire of AI: Dreams and nightmares in Sam Altman's OpenAI. Penguin Press.", url: "https://find.library.duke.edu/catalog/DUKE99119765250108501" },
+    { title: "Bender, E. & A. Hanna. (2025). The AI Con: How to fight Big Tech's hype and create the future we want. Harper Collins.", url: "https://search.worldcat.org/title/1517506274" },
+    { title: "Hao, K. (2025). Empire of AI: Dreams and nightmares in Sam Altman's OpenAI. Penguin Press.", url: "https://search.worldcat.org/title/1482119829" },
     { title: "Narayanan, A., & Kapoor, S. (2025). \"Why an overreliance on AI-driven modelling is bad for science.\" Nature, 640(8058), 312–314.", url: "https://doi.org/10.1038/d41586-025-01067-2" },
-    { title: "Merchant, B. (2023). Blood in the Machine: The origins of the rebellion against big tech. Little, Brown and Company.", url: "https://find.library.duke.edu/catalog/DUKE011250296" },
+    { title: "Merchant, B. (2023). Blood in the Machine: The origins of the rebellion against big tech. Little, Brown and Company.", url: "https://search.worldcat.org/title/1389775757" },
     { title: "Postman, N. (1998, March 28). \"Five things we need to know about technological change.\"", url: "https://web.cs.ucdavis.edu/~rogaway/classes/188/materials/postman.pdf?ref=icopilots.com" },
   ],
 
