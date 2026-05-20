@@ -91,7 +91,6 @@ export const sustainableContent = {
       tagline: "Applying what you've learned to your own AI habits",
       purpose: "Apply what you have learned about AI's environmental impacts to your own life. Develop a personal plan for using AI in a more environmentally conscious way.",
       objectives: ["Develop a personal plan for sustainable AI usage"],
-      udlOptions: true,
       steps: [
         { label: "Outline Your Current AI Use", detail: "Describe how you have used AI up to this point — what tools, how often, and for what purposes." },
         { label: "Develop Your Plan", detail: "Clearly describe the steps you plan to take to make your AI use more environmentally conscious going forward. Explain why your proposed plan will result in more sustainable AI use." },

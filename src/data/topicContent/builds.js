@@ -100,7 +100,6 @@ export const buildsContent = {
         "Analyze how credit, compensation, and risk are distributed across AI workers",
         "Reflect on the ethical implications of the AI labor supply chain",
       ],
-      udlOptions: true,
       steps: [
         { label: "Introduction", detail: "Consider this: when you type a prompt into ChatGPT and receive a response, dozens of categories of human workers have contributed to making that interaction possible. But who are they? Where are they? And how are they treated?", instructorNote: "This activity works well as a culminating exercise after Activities 1 and 2 have established the foundational knowledge about ghost work and content moderation." },
         { label: "Group Mapping Exercise", detail: "In groups of 4–5, create a visual map (on a whiteboard, large paper, or shared digital document) that traces the human labor involved in a single AI chatbot interaction. Include at least these categories: algorithm designers and engineers, training data creators (the people whose content was scraped), data annotators and labelers, content moderators, infrastructure workers (data center staff), and end users. For each category, note: where these workers are likely located, approximate compensation, working conditions, and whether their contribution is visible or invisible to the end user.", time: "25 min" },

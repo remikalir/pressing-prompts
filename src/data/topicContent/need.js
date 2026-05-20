@@ -42,7 +42,6 @@ export const needContent = {
         "Investigate how art (made with and without AI) is a societal artifact of the digital age",
         "Evaluate whether AI-generated art constitutes genuine \"creativity\" and articulate a reasoned position",
       ],
-      udlOptions: true,
       steps: [
         { label: "Pre-Reading", detail: "Read two articles before class: the Stanford Encyclopedia of Philosophy's \"Definition of Art\" and MIT Technology Review's \"AI-generated art raises tricky questions.\" Note that there are many competing philosophical definitions of art, and AI-generated art is part of this larger ongoing debate. There is no single correct answer.", instructorNote: "Clarify to students that the objective of these readings is to internalize the plurality of definitions of art. The debate about AI-generated art is not new — it's an extension of longstanding philosophical questions." },
         { label: "Small-Group Discussion", detail: "In pairs or small groups, discuss: How do you differentiate between artists who used AI as a support tool and art generated solely by AI? What is your personal definition of art? What surprised you in the readings? What were your main takeaways?" },
@@ -68,7 +67,6 @@ export const needContent = {
       tagline: "Unplugging from AI and technology for 24 hours — and mapping what you find",
       purpose: "Map your interior life to your daily routine, then disconnect from AI and technology for 24 hours and document how the experience affects your mental, emotional, and practical state. How does being \"plugged in\" affect your interior life? How does disconnecting affect it?",
       objectives: ["Assess how a human's self-knowledge prepares them to use AI prudently"],
-      udlOptions: true,
       steps: [
         { label: "Reflection 1: The Day Before You Unplug", detail: "Answer at least two prompts in 1–2 paragraphs: Outline how you use AI, social media, search engines, etc. in your daily routines. Sketch your mental and emotional state — emotional highs and lows today. Consider your work/life balance. How does AI make it better or worse? How does using AI help you feel more efficient, relaxed, or stressed?" },
         { label: "The Experiment: Disconnect for 24 Hours", detail: "Except for critical tasks (schoolwork, health emergencies, etc.), disconnect from your phone, social media, AI, and internet streaming for 24 hours. Keep a reflection log throughout the experience." },
