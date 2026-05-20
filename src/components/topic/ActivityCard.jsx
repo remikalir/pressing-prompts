@@ -61,9 +61,6 @@ export default function ActivityCard({ activity, expanded, onToggle, showNotes, 
             {activity.addOn && (
               <MiniPill background="#E0F7FA" color="#00838F">Add-On</MiniPill>
             )}
-            {activity.udlOptions && (
-              <MiniPill background="#F3E5F5" color="#6A1B9A">UDL Options</MiniPill>
-            )}
             {hasOnlineVersion && activity.type === "in-class" && (
               <span style={{ fontSize: "12px", fontFamily: T.sans, color: T.text3, fontWeight: 500 }}>
                 + online version
