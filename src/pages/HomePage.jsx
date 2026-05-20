@@ -72,7 +72,7 @@ export default function HomePage() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                The prompts about AI
+                The questions about AI
                 <br />
                 worth pressing on.
               </h1>

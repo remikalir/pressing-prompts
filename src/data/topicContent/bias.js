@@ -204,7 +204,7 @@ export const biasContent = {
   ],
 
   pageNotes: [
-    { id: 1, text: "Noble, S. U. (2018). *Algorithms of Oppression: How Search Engines Reinforce Racism*. NYU Press." },
+    { id: 1, text: "Noble, S. U. (2018). [*Algorithms of Oppression: How Search Engines Reinforce Racism*](https://search.worldcat.org/title/1017736697). NYU Press." },
     { id: 2, text: "Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). [On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?](https://dl.acm.org/doi/10.1145/3442188.3445922) *Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency*, 610–623." },
   ],
 
