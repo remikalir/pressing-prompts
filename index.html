@@ -8,7 +8,33 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#2E2A28" />
+    <meta name="theme-color" content="#2E2A28" />
+    <!-- SPA fallback unwrap. Paired with public/404.html: GitHub Pages
+         serves 404.html for any unknown path, which encodes the original
+         path into a query string and redirects to "/". This inline script
+         decodes that query string and uses history.replaceState to restore
+         the original URL before React Router boots. Must run before the
+         module script below. Adapted from the canonical spa-github-pages
+         technique (Rafael Pedicini, MIT-licensed). -->
+    <script>
+      (function () {
+        var l = window.location;
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
