@@ -59,29 +59,6 @@ export default function TopicPage() {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  // ─── Footnote-marker click handling ───
-  // Inline footnote markers like ¹ ² ³ are <a href="#page-note-N"> elements.
-  // Under HashRouter, the router owns the URL hash, so a real navigation to
-  // #page-note-N would be interpreted as the route /page-note-N and produce
-  // a 404. We intercept clicks here, prevent the browser's default hash
-  // navigation, and scroll to the target ourselves. Event delegation at the
-  // document level catches clicks regardless of how the marker was rendered
-  // (including inside `dangerouslySetInnerHTML` blocks).
-  useEffect(() => {
-    const handleNoteRefClick = (e) => {
-      const link = e.target.closest('a[href^="#page-note-"]');
-      if (!link) return;
-      e.preventDefault();
-      const targetId = link.getAttribute("href").slice(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    };
-    document.addEventListener("click", handleNoteRefClick);
-    return () => document.removeEventListener("click", handleNoteRefClick);
-  }, []);
-
   // ─── Bail-outs ───
   if (!topic) return <Navigate to="/" replace />;
   if (!content) {
