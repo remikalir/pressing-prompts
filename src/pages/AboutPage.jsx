@@ -251,7 +251,7 @@ export default function AboutPage() {
             <TeamMember
               name="Aria Chernik"
               href="https://www.linkedin.com/in/ariachernik/"
-              descriptor="co-founder, designer, enjoys beaches"
+              descriptor="co-founder, educator, enjoys beaches"
             />
           </ul>
           <div style={{ marginTop: "24px" }}>
