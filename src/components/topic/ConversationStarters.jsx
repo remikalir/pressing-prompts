@@ -1,4 +1,5 @@
 import { T } from "../../styles/tokens.js";
+import PlaylistToggle from "./PlaylistToggle.jsx";
 
 // ─── Conversation Starters ───
 // No-prep discussion prompts. Each topic can optionally include a list of
@@ -39,7 +40,7 @@ export default function ConversationStarters({ starters, colors }) {
             style={{
               display: "flex",
               gap: "12px",
-              alignItems: "flex-start",
+              alignItems: "center",
               padding: "12px 16px",
               background: T.bgWarm,
               borderRadius: "10px",
@@ -53,6 +54,7 @@ export default function ConversationStarters({ starters, colors }) {
                 color: colors.mid,
                 flexShrink: 0,
                 lineHeight: 1.15,
+                alignSelf: "flex-start",
               }}
             >
               {i + 1}
@@ -64,10 +66,12 @@ export default function ConversationStarters({ starters, colors }) {
                 fontSize: "13px",
                 lineHeight: 1.6,
                 color: T.text1,
+                flex: 1,
               }}
             >
               {s.prompt}
             </p>
+            {s.id && <PlaylistToggle id={s.id} colors={colors} />}
           </div>
         ))}
       </div>

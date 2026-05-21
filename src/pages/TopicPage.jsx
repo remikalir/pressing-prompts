@@ -468,7 +468,7 @@ export default function TopicPage() {
             </h2>
             <p style={{ fontFamily: T.sans, fontSize: "14px", color: T.text3 }}>
               {content.activities.length > 0
-                ? "Facilitate student-centered learning — expand any to explore"
+                ? "Facilitate student-centered learning — expand any to explore, build your playlist"
                 : "Activities in development — previews below"}
             </p>
           </div>

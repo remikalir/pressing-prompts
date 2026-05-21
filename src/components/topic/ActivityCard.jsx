@@ -7,6 +7,7 @@ import LearningNote from "./LearningNote.jsx";
 import NoAIAlternative from "./NoAIAlternative.jsx";
 import SharedFrameworkBadge from "./SharedFrameworkBadge.jsx";
 import RichBlocks from "./RichBlocks.jsx";
+import PlaylistToggle from "./PlaylistToggle.jsx";
 
 // ─── Activity Card ───
 // Expandable accordion for a single activity. When expanded, shows:
@@ -29,80 +30,97 @@ export default function ActivityCard({ activity, expanded, onToggle, showNotes, 
         overflow: "hidden",
       }}
     >
-      <button
-        onClick={onToggle}
+      {/* Header row: an expand <button> for accordion toggling sits next
+          to the PlaylistToggle. They're siblings rather than nested so
+          neither HTML semantics nor click-bubbling get tangled. */}
+      <div
         style={{
-          width: "100%",
-          padding: "24px 28px",
           display: "flex",
           alignItems: "flex-start",
+          padding: "24px 28px",
           gap: "16px",
-          border: "none",
-          background: "transparent",
-          cursor: "pointer",
-          textAlign: "left",
         }}
       >
-        <ActivityNumber n={activity.number} colors={colors} />
-        <div style={{ flex: 1 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-              marginBottom: "6px",
-              flexWrap: "wrap",
-            }}
-          >
-            <TypeBadge type={activity.type} />
-            {activity.multiSession && (
-              <MiniPill background="#EDE7F6" color="#5E35B1">Multi-Session</MiniPill>
-            )}
-            {activity.addOn && (
-              <MiniPill background="#E0F7FA" color="#00838F">Add-On</MiniPill>
-            )}
-            {hasOnlineVersion && activity.type === "in-class" && (
-              <span style={{ fontSize: "12px", fontFamily: T.sans, color: T.text3, fontWeight: 500 }}>
-                + online version
-              </span>
-            )}
-            {activity.noAIAlternative && (
-              <span style={{ fontSize: "12px", fontFamily: T.sans, color: "#F57F17", fontWeight: 600 }}>
-                ⊘ no-AI option
-              </span>
-            )}
-          </div>
-          <h3
-            style={{
-              margin: "0 0 4px 0",
-              fontFamily: T.serif,
-              fontSize: "22px",
-              fontWeight: 400,
-              color: T.text1,
-              fontStyle: "italic",
-            }}
-          >
-            {activity.title}
-          </h3>
-          <p style={{ margin: 0, fontFamily: T.sans, fontSize: "14px", color: T.text2, lineHeight: 1.6 }}>
-            {activity.tagline}
-          </p>
-        </div>
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
+        <button
+          onClick={onToggle}
           style={{
-            flexShrink: 0,
-            marginTop: "4px",
-            transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
-            transition: "transform 0.3s ease",
+            flex: 1,
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "16px",
+            border: "none",
+            background: "transparent",
+            cursor: "pointer",
+            textAlign: "left",
+            padding: 0,
           }}
         >
-          <path d="M5 8L10 13L15 8" stroke={T.text3} strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-      </button>
+          <ActivityNumber n={activity.number} colors={colors} />
+          <div style={{ flex: 1 }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                marginBottom: "6px",
+                flexWrap: "wrap",
+              }}
+            >
+              <TypeBadge type={activity.type} />
+              {activity.multiSession && (
+                <MiniPill background="#EDE7F6" color="#5E35B1">Multi-Session</MiniPill>
+              )}
+              {activity.addOn && (
+                <MiniPill background="#E0F7FA" color="#00838F">Add-On</MiniPill>
+              )}
+              {hasOnlineVersion && activity.type === "in-class" && (
+                <span style={{ fontSize: "12px", fontFamily: T.sans, color: T.text3, fontWeight: 500 }}>
+                  + online version
+                </span>
+              )}
+              {activity.noAIAlternative && (
+                <span style={{ fontSize: "12px", fontFamily: T.sans, color: "#F57F17", fontWeight: 600 }}>
+                  ⊘ no-AI option
+                </span>
+              )}
+            </div>
+            <h3
+              style={{
+                margin: "0 0 4px 0",
+                fontFamily: T.serif,
+                fontSize: "22px",
+                fontWeight: 400,
+                color: T.text1,
+                fontStyle: "italic",
+              }}
+            >
+              {activity.title}
+            </h3>
+            <p style={{ margin: 0, fontFamily: T.sans, fontSize: "14px", color: T.text2, lineHeight: 1.6 }}>
+              {activity.tagline}
+            </p>
+          </div>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            style={{
+              flexShrink: 0,
+              marginTop: "4px",
+              transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
+              transition: "transform 0.3s ease",
+            }}
+          >
+            <path d="M5 8L10 13L15 8" stroke={T.text3} strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        </button>
+        {activity.id && (
+          <div style={{ marginTop: "4px" }}>
+            <PlaylistToggle id={activity.id} colors={colors} />
+          </div>
+        )}
+      </div>
 
       {expanded && (
         <div style={{ padding: "0 28px 28px", animation: "fadeIn 0.3s ease" }}>
