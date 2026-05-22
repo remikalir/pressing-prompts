@@ -5,6 +5,7 @@ import TopicPage from "./pages/TopicPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import PrivacyPage from "./pages/PrivacyPage.jsx";
 import BlogPage from "./pages/BlogPage.jsx";
+import BlogPostPage from "./pages/BlogPostPage.jsx";
 import PlaylistPage from "./pages/PlaylistPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import PlaylistPanel from "./components/home/PlaylistPanel.jsx";
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/playlist" element={<PlaylistPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
