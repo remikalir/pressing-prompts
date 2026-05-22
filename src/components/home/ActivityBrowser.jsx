@@ -67,21 +67,24 @@ export default function ActivityBrowser() {
             button. When you're ready, export as PDF, copy shareable links, or download as Markdown
             for your LMS. <strong>No account required — no data stored.</strong>
           </p>
-          <div style={{ display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap" }}>
-            {["No login required", "No data collected", "Export anytime", "CC BY-NC-SA 4.0"].map((badge, i) => (
+          {/* Quiet metadata labels — borderless, transparent, eyebrow-style.
+              The two informational items overlapping with the bold prose
+              above (login, data collection) were removed in Sprint 7; the
+              remaining two add information the prose does not. */}
+          <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}>
+            {["Export anytime", "CC BY-NC-SA 4.0"].map((label, i) => (
               <span
                 key={i}
                 style={{
                   fontFamily: T.sans,
-                  fontSize: "12px",
+                  fontSize: "11px",
+                  fontWeight: 500,
                   color: T.text3,
-                  background: "white",
-                  padding: "6px 16px",
-                  borderRadius: "20px",
-                  border: `1px solid ${T.border}`,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
                 }}
               >
-                {badge}
+                {label}
               </span>
             ))}
           </div>
@@ -95,7 +98,22 @@ export default function ActivityBrowser() {
               <button
                 key={key}
                 onClick={() => setBrowseType(isActive ? null : key)}
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.boxShadow = T.shadowHover;
+                    e.currentTarget.style.borderColor = T.text3;
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.boxShadow = T.shadow;
+                    e.currentTarget.style.borderColor = T.border;
+                  }
+                }}
                 style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "16px",
                   padding: "24px",
                   background: "white",
                   borderRadius: T.radiusLg,
@@ -107,12 +125,36 @@ export default function ActivityBrowser() {
                   transform: isActive ? "scale(1.02)" : "scale(1)",
                 }}
               >
-                <div style={{ fontFamily: T.sans, fontSize: "14px", fontWeight: 600, color: T.text1, marginBottom: "6px" }}>
-                  {meta.label}
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontFamily: T.sans, fontSize: "14px", fontWeight: 600, color: T.text1, marginBottom: "6px" }}>
+                    {meta.label}
+                  </div>
+                  <div style={{ fontFamily: T.sans, fontSize: "13px", color: T.text3, lineHeight: 1.6 }}>
+                    {meta.description}
+                  </div>
                 </div>
-                <div style={{ fontFamily: T.sans, fontSize: "13px", color: T.text3, lineHeight: 1.6 }}>
-                  {meta.description}
-                </div>
+                {/* Affordance arrow — rotates 90° when expanded so the card
+                    reads as a disclosure control rather than a navigation link. */}
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  style={{
+                    flexShrink: 0,
+                    color: isActive ? T.chrome : T.text3,
+                    transform: isActive ? "rotate(90deg)" : "rotate(0deg)",
+                    transition: "transform 0.25s ease, color 0.25s ease",
+                  }}
+                >
+                  <path
+                    d="M6 3L11 8L6 13"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </button>
             );
           })}

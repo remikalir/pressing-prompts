@@ -205,7 +205,7 @@ export default function HomePage() {
         >
           Designed for Your Classroom
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "24px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "32px" }}>
           {[
             {
               step: "The Question",
@@ -223,11 +223,7 @@ export default function HomePage() {
             <div
               key={i}
               style={{
-                padding: "32px 28px",
-                background: "white",
-                borderRadius: T.radiusLg,
-                border: `1px solid ${T.border}`,
-                boxShadow: T.shadow,
+                padding: "8px 12px",
                 textAlign: "center",
               }}
             >
