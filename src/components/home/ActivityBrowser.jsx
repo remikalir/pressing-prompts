@@ -65,14 +65,14 @@ export default function ActivityBrowser() {
               +
             </span>{" "}
             button. When you're ready, export as PDF, copy shareable links, or download as Markdown
-            for your LMS. <strong>No account required — no data stored.</strong>
+            for your LMS.
           </p>
           {/* Quiet metadata labels — borderless, transparent, eyebrow-style.
               The two informational items overlapping with the bold prose
               above (login, data collection) were removed in Sprint 7; the
               remaining two add information the prose does not. */}
           <div style={{ display: "flex", gap: "20px", justifyContent: "center", flexWrap: "wrap" }}>
-            {["Export anytime", "CC BY-NC-SA 4.0"].map((label, i) => (
+            {["No login required", "No data collected", "Export anytime", "CC BY-NC-SA 4.0"].map((label, i) => (
               <span
                 key={i}
                 style={{
