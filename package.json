@@ -6,6 +6,7 @@
   "description": "Pressing Prompts — an open collection of activities, resources, and pedagogical guidance for higher education instructors bringing AI ethics into their classrooms. Incubated at Duke University, 2024–25.",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/generate-rss.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },
