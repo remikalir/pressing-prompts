@@ -1,8 +1,13 @@
 // ─── Blog utility ───
 // Loads every markdown file under src/content/blog/*.md at build time
-// using Vite's import.meta.glob. Each file is parsed with gray-matter
+// using Vite's import.meta.glob. Each file is parsed with front-matter
 // for frontmatter and marked for body HTML. The result is a static
 // array of post objects that the page components consume.
+//
+// front-matter is used instead of the more common gray-matter because
+// gray-matter depends on Node's Buffer global, which isn't defined in
+// the browser and would throw at module-load time. front-matter has
+// the same YAML-frontmatter capabilities with no Node dependencies.
 //
 // Because import.meta.glob runs at build time with eager: true, all
 // posts are bundled into the JS output. No runtime fetches, no async
@@ -23,7 +28,7 @@
 //     html:        "<p>...</p>" (rendered body),
 //   }
 
-import matter from "gray-matter";
+import fm from "front-matter";
 import { marked } from "marked";
 
 // Eagerly import every markdown file as a raw string. The shape of
@@ -42,17 +47,24 @@ function slugFromPath(path) {
 }
 
 function formatDate(date) {
+  // Format in UTC to avoid timezone-shift artifacts. A frontmatter date
+  // like "2026-05-22" is parsed as midnight UTC, which would display as
+  // May 21 in any timezone west of UTC if we let the formatter use the
+  // local timezone. Posts have a calendar date, not an instant in time.
   return date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC",
   });
 }
 
 // Parse every module once at load time. Cached for the lifetime of the app.
 const POSTS = Object.entries(modules)
   .map(([path, raw]) => {
-    const { data, content } = matter(raw);
+    const parsed = fm(raw);
+    const data = parsed.attributes;
+    const content = parsed.body;
     const slugFromFile = slugFromPath(path);
 
     // Sanity check: frontmatter slug should match filename-derived slug.
