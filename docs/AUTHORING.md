@@ -208,6 +208,47 @@ notes:
 
 ## Common gotchas
 
+### Google Docs export artifacts
+
+Google Docs's "Download → Markdown" exports add backslashes before
+certain punctuation: `\!`, `\?`, `\'`, `\.` and similar. The Doc treats
+these as escapes; markdown and YAML do not.
+
+This matters in two ways:
+
+- **In frontmatter:** a backslash inside a double-quoted string triggers
+  YAML escape parsing. `\!` is not a valid YAML escape, so the parser
+  throws and the entire site fails to load (blank browser, no error
+  overlay). The symptom is a blank `/blog` page after `npm run dev` —
+  if that happens after dropping in a new post, this is almost certainly
+  the cause.
+- **In body text:** backslashes render literally as visible characters
+  (`We\'re` displays as the four characters `We\'re`, not as `We're`).
+  Less catastrophic, but ugly.
+
+**Always sweep a Docs-exported markdown file before committing.** From
+the directory containing the post:
+
+```
+grep -n '\\' your-post.md
+sed -i.bak 's/\\\([!?.,'"'"':;]\)/\1/g' your-post.md
+rm your-post.md.bak
+grep -n '\\' your-post.md
+```
+
+The first `grep` shows every line with a backslash so you can see what
+you're cleaning. The `sed` command strips a backslash when it appears
+before common punctuation (`! ? . , ' : ;`). The second `grep` confirms
+the file is clean — it should return nothing. If it finds remaining
+matches, look at them and decide whether they belong (rare, but
+possible for genuine escape sequences in code blocks).
+
+Watch also for **zero-width characters and non-breaking spaces** that
+Docs occasionally inserts; these won't crash the parser but display as
+garbage or strange spacing. To find them: `cat -A your-post.md | head
+-20` — any `M-`-prefixed escape sequences are non-ASCII characters
+worth inspecting.
+
 ### Date timezone
 
 Dates in frontmatter are interpreted as midnight UTC. This means
