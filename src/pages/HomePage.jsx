@@ -270,7 +270,7 @@ export default function HomePage() {
               marginBottom: "16px",
             }}
           >
-            Pressing Prompts is an independent, openly accessible resource for higher education instructors
+            Pressing Prompts is an openly accessible resource for higher education instructors
             worldwide. The fuller incubation narrative and team credits live on the{" "}
             <Link to="/about" style={{ color: "rgba(255,255,255,0.8)", textDecoration: "underline" }}>
               About page

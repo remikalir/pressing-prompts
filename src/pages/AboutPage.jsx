@@ -126,9 +126,8 @@ export default function AboutPage() {
         <Section id="start" title="Our Start">
           <p style={paragraphStyle}>
             Our original project was incubated at Duke University during the 2024–2025
-            academic year. That initial effort, titled the AI Ethics Learning Toolkit, was
-            co-designed by undergraduate students, librarians, faculty, and technologists from
-            multiple academic units. We're grateful for the perspectives, contributions, and
+            academic year. That initial collaboration between Duke’s Center for Teaching and Learning and Duke Libraries was titled the AI Ethics Learning Toolkit, and it was
+            co-designed by undergraduate students, librarians, faculty, and technologists. We're grateful for the perspectives, contributions, and
             critiques shared with us by many helpful people.
           </p>
           <p style={paragraphStyle}>

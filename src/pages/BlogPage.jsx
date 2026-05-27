@@ -58,8 +58,8 @@ export default function BlogPage() {
             marginBottom: "56px",
           }}
         >
-          Reflections, updates, and occasional essays from the Pressing Prompts team
-          on AI ethics in higher education.
+          Reflections and updates from the Pressing Prompts team
+          about AI, ethics, teaching, and learning in higher education.
         </p>
 
         {posts.length === 0 ? (
