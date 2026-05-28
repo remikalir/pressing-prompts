@@ -116,7 +116,7 @@ export default function AboutPage() {
           <p style={paragraphStyle}>
             As educators, we believe it's a professional responsibility to engender thoughtful
             discussion with our students about AI. Pressing Prompts can help you spark and
-            sustain those conversations. Afterall, the most crucial questions about AI aren't
+            sustain those conversations. After all, the most crucial questions about AI aren't
             technical, but human.
           </p>
           <BackToTop />
