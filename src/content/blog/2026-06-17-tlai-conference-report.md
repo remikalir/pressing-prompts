@@ -3,7 +3,7 @@ title: "Teaching and Learning with AI Conference Report"
 slug: tlai-conference-report
 date: 2026-06-17
 author: Hannah Rozear
-excerpt: "Hannah shared Pressing Prompts with attendees at the 4th Annual Teaching and Learning with AI Conference, hosted by the University of Central Floria."
+excerpt: "Hannah shared Pressing Prompts with attendees at the 4th Annual Teaching and Learning with AI Conference, hosted by the University of Central Florida."
 tags: [conference, presentation, ai-ethics]
 hero: /blog/tlai-conference-report/hero.jpg
 heroAlt: "A dark atmospheric field of small softly glowing points gathered in four loose clusters, joined by faint warm threads that draw inward toward two concentric rings around a small italic period at the center; one warm amber point sits just off-center as a focal accent."
@@ -29,5 +29,8 @@ Throughout the conference, I distributed our mini-zine and had rich conversation
 If you’re wrestling with any of these same questions in your own classroom or institution, we hope *Pressing Prompts* offers a useful starting point. We’d love to hear what you’re thinking about.
 
 —  
-To reach our team, please contact [Hannah](https://directory.library.duke.edu/staff/hannah.rozear), [Aria](https://www.linkedin.com/in/ariachernik/), or [Remi](https://www.linkedin.com/in/jeremiah-kalir-phd/).  
+To reach our team, please contact [Hannah](https://directory.library.duke.edu/staff/hannah.rozear), [Aria](https://www.linkedin.com/in/ariachernik/), or [Remi](https://www.linkedin.com/in/jeremiah-kalir-phd/).
+
+Coming soon: Remi will facilitate ["Pressing Prompts: Questions and Activities" during MYFest26](https://myfest.equityunbound.org/events/pressing-prompts-questions-and-activities/) on Thursday, July 2 at 12p ET.
+
 *Press on, critically, together.*
