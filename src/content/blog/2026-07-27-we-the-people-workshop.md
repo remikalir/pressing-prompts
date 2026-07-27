@@ -1,12 +1,12 @@
 ---  
-title: "Helping Students Think Critically About AI Starts with Teachers"  
-slug: we-the-people-workshop  
-date: 2026-07-27  
-author: Aria Chernik and Hannah Rozear  
+title: "Helping Students Think Critically About AI Starts with Teachers"
+slug: we-the-people-workshop
+date: 2026-07-27
+author: Aria Chernik and Hannah Rozear
 excerpt: "In June, Aria and Hannah facilitated a Pressing Prompts workshop for K-12 educators as a part of Duke University's We the People Initiative."  
 tags: [k12, presentation, ai-ethics]
-hero: /blog/we-the-people-workshop/hero.jpg  
-heroAlt: "A dark, atmospheric scene with a warm red-sienna mass of soft light on the left and a cool indigo-blue mass on the right, each holding several small points of varied size, held in quiet balance around a single larger luminous warm point at the center."  
+hero: /blog/we-the-people-workshop/hero.jpg
+heroAlt: "A dark, atmospheric scene with a warm red-sienna mass of soft light on the left and a cool indigo-blue mass on the right, each holding several small points of varied size, held in quiet balance around a single larger luminous warm point at the center."
 ---
 
 What brings you joy? For us, one of our immediate answers is collaborating with K-12 educators. It's been decades since Aria taught high school English and journalism, but she has spent her career teaching and researching about learning innovation. And Hannah has been a long-time advocate for Durham Public Schools. So when we were invited to speak with teachers in June about the implications of AI in teaching, we were thrilled.
@@ -40,6 +40,7 @@ So, would *Pressing Prompts* resonate? The answer, it turned out, was a resoundi
 
 And we, too, were optimistic. Even though our session was the very last one of an intensive three-day workshop, educators wanted to keep talking past the end time. Energized and eager amidst all the mounting complexities they must navigate around AI in the classroom, they were clear-eyed about one thing: AI isn’t going away, and helping students approach it with curiosity, critical thinking, and ethical awareness is one of the most important challenges educators now share.  
 —
+
 To reach our team, please contact [Hannah](https://directory.library.duke.edu/staff/hannah.rozear), [Aria](https://www.linkedin.com/in/ariachernik/), or [Remi](https://www.linkedin.com/in/jeremiah-kalir-phd/).
 
 In other news: Remi facilitated "Pressing Prompts: Questions and Activities" [during MYFest26](https://myfest.equityunbound.org/events/pressing-prompts-questions-and-activities/) and you can [watch a recording of the workshop](https://youtu.be/Vlv7tLU2sKA?si=VnfWU17jNE9OyMrK).
