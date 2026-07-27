@@ -1,9 +1,9 @@
----  
+---
 title: "Helping Students Think Critically About AI Starts with Teachers"
 slug: we-the-people-workshop
 date: 2026-07-27
 author: Aria Chernik and Hannah Rozear
-excerpt: "In June, Aria and Hannah facilitated a Pressing Prompts workshop for K-12 educators as a part of Duke University's We the People Initiative."  
+excerpt: "In June, Aria and Hannah facilitated a Pressing Prompts workshop for K-12 educators as a part of Duke University's We the People Initiative."
 tags: [k12, presentation, ai-ethics]
 hero: /blog/we-the-people-workshop/hero.jpg
 heroAlt: "A dark, atmospheric scene with a warm red-sienna mass of soft light on the left and a cool indigo-blue mass on the right, each holding several small points of varied size, held in quiet balance around a single larger luminous warm point at the center."
