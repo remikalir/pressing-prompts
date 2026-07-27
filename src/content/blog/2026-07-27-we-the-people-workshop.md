@@ -8,7 +8,6 @@ tags: [k12, presentation, ai-ethics]
 hero: /blog/we-the-people-workshop/hero.jpg
 heroAlt: "A dark, atmospheric scene with a warm red-sienna mass of soft light on the left and a cool indigo-blue mass on the right, each holding several small points of varied size, held in quiet balance around a single larger luminous warm point at the center."
 ---
-
 What brings you joy? For us, one of our immediate answers is collaborating with K-12 educators. It's been decades since Aria taught high school English and journalism, but she has spent her career teaching and researching about learning innovation. And Hannah has been a long-time advocate for Durham Public Schools. So when we were invited to speak with teachers in June about the implications of AI in teaching, we were thrilled.
 
 Our audience included local public school teachers spanning grades 4-12 participating in a professional development training focused on civics, humanities, and archives-based curricula as part of the [We the People](https://today.duke.edu/2026/04/duke-and-durham-mark-250th-anniversary-declaration-independence) initiative. But we wondered: Would *Pressing Prompts* resonate given our primary focus on post-secondary learners?
