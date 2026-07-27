@@ -3,8 +3,8 @@ title: "Helping Students Think Critically About AI Starts with Teachers"
 slug: we-the-people-workshop  
 date: 2026-07-27  
 author: Aria Chernik and Hannah Rozear  
-excerpt: "In June, Aria and Hannah facilitated a Pressing Prompts workshop for K-12 educators as a part of Duke University’s We the People Initiative."  
-tags: \[k12, presentation, ai-ethics\]  
+excerpt: "In June, Aria and Hannah facilitated a Pressing Prompts workshop for K-12 educators as a part of Duke University's We the People Initiative."  
+tags: [k12, presentation, ai-ethics]
 hero: /blog/we-the-people-workshop/hero.jpg  
 heroAlt: "A dark, atmospheric scene with a warm red-sienna mass of soft light on the left and a cool indigo-blue mass on the right, each holding several small points of varied size, held in quiet balance around a single larger luminous warm point at the center."  
 ---
@@ -35,12 +35,8 @@ As teachers started sharing their reflections, we immediately recognized the sim
 
 So, would *Pressing Prompts* resonate? The answer, it turned out, was a resounding yes. The educators found a lot of tie-ins between Pressing Prompts and their own curricula and were optimistic that it could serve as a useful resource in their classrooms, even those with the youngest learners. We discussed adaptations they might make, particularly around the topics that resonated most, like *Can We Trust AI?* and *Is AI Theft?*. Teachers also thought the Conversation Starters could be a great way of engaging students in discussions about AI that didn't feel so punitive.
 
-\<table\>  
-  \<tr\> 
-    \<td\>![Close-up photograph of Hannah holding a small card catalog box full of small zines and laughing while speaking with two educators.](/blog/we-the-people-workshop/hannahwtp.jpg)</td\>
-    \<td\>![Close-up photograph of Aria listening and interacting with two educators.](/blog/we-the-people-workshop/ariawtp.jpg)</td\>
-  \</tr\> 
-\</table\>
+![Close-up photograph of Hannah holding a small card catalog box full of small zines and laughing while speaking with two educators.](/blog/we-the-people-workshop/hannahwtp.jpg)
+![Close-up photograph of Aria listening and interacting with two educators.](/blog/we-the-people-workshop/ariawtp.jpg)
 
 And we, too, were optimistic. Even though our session was the very last one of an intensive three-day workshop, educators wanted to keep talking past the end time. Energized and eager amidst all the mounting complexities they must navigate around AI in the classroom, they were clear-eyed about one thing: AI isn’t going away, and helping students approach it with curiosity, critical thinking, and ethical awareness is one of the most important challenges educators now share.  
 —
