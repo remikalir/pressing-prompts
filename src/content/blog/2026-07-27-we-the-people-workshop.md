@@ -21,7 +21,7 @@ As teachers started sharing their reflections, we immediately recognized the sim
 **Concerns:**
 
 * Students are losing their own authentic voice through overuse of AI.
-* AI is becoming an "easy button" that short-circuits the productive struggle that builds critical thinking and learning-through-failure.
+* AI is becoming an "easy button" that short-circuits the productive struggle that builds critical thinking and learning through failure.
 * Heavy reliance on AI may have short-term benefits but may harm long-term knowledge retention.
 * AI often doesn't give credit to the sources it uses.
 
