@@ -208,46 +208,33 @@ notes:
 
 ## Common gotchas
 
-### Google Docs export artifacts
+### Trailing whitespace on the frontmatter delimiters
 
-Google Docs's "Download → Markdown" exports add backslashes before
-certain punctuation: `\!`, `\?`, `\'`, `\.` and similar. The Doc treats
-these as escapes; markdown and YAML do not.
+If a post shows up on the live site as "Untitled" with an "Invalid
+Date" and the author defaulting to "Pressing Prompts" — and the whole
+frontmatter block renders as body text instead of being read as
+metadata — the cause is almost always trailing whitespace on the
+opening `---` line.
 
-This matters in two ways:
+The parser recognizes a frontmatter block by matching an opening `---`
+that sits *alone* on its line, with nothing after the three dashes.
+Even a stray space or two (`---  `) breaks the match, and the parser
+gives up and treats the entire file as body content with no metadata
+at all. That's why every field falls back to its default at once. The
+whitespace is invisible in every editor, so this is genuinely hard to
+spot by eye — you have to look for it deliberately.
 
-- **In frontmatter:** a backslash inside a double-quoted string triggers
-  YAML escape parsing. `\!` is not a valid YAML escape, so the parser
-  throws and the entire site fails to load (blank browser, no error
-  overlay). The symptom is a blank `/blog` page after `npm run dev` —
-  if that happens after dropping in a new post, this is almost certainly
-  the cause.
-- **In body text:** backslashes render literally as visible characters
-  (`We\'re` displays as the four characters `We\'re`, not as `We're`).
-  Less catastrophic, but ugly.
-
-**Always sweep a Docs-exported markdown file before committing.** From
-the directory containing the post:
+It tends to sneak in while assembling or copy-pasting the frontmatter
+block. Before committing, check for trailing whitespace on any line:
 
 ```
-grep -n '\\' your-post.md
-sed -i.bak 's/\\\([!?.,'"'"':;]\)/\1/g' your-post.md
-rm your-post.md.bak
-grep -n '\\' your-post.md
+grep -nE '[[:space:]]+$' src/content/blog/YYYY-MM-DD-<slug>.md
 ```
 
-The first `grep` shows every line with a backslash so you can see what
-you're cleaning. The `sed` command strips a backslash when it appears
-before common punctuation (`! ? . , ' : ;`). The second `grep` confirms
-the file is clean — it should return nothing. If it finds remaining
-matches, look at them and decide whether they belong (rare, but
-possible for genuine escape sequences in code blocks).
-
-Watch also for **zero-width characters and non-breaking spaces** that
-Docs occasionally inserts; these won't crash the parser but display as
-garbage or strange spacing. To find them: `cat -A your-post.md | head
--20` — any `M-`-prefixed escape sequences are non-ASCII characters
-worth inspecting.
+Any hit on the `---` lines (or on a frontmatter field) should be
+trimmed. Hits inside the body are usually fine — two trailing spaces
+are a markdown hard line break — so only the frontmatter matches need
+fixing.
 
 ### Date timezone
 
