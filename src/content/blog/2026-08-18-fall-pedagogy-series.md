@@ -25,7 +25,8 @@ In both workshops, we will: present *Pressing Prompts* within the larger context
 And across the three community conversations, we will: spend time hearing from faculty who have experimented with *Pressing Prompts* in their classrooms; answer questions and brainstorm together about how instructors might integrate the resource into their pedagogy and courses; and learn from faculty about their interest in and ideas for iterating *Pressing Prompts* for future use.
 
 Finally, a note for our many dear colleagues not at Duke: We'd love to organize similar activities for you, too\! This past summer, we facilitated workshops about *Pressing Prompts* for various groups, including [local K-12 educators](https://pressingprompts.org/blog/we-the-people-workshop) and instructors around the world during [MYFest26](https://youtu.be/Vlv7tLU2sKA?si=iMOR_DkCIO5bUiTo). Please contact us to discuss how we can share *Pressing Prompts* with you and your colleagues-whether on campus or online, and whether through workshops, conversions, or other types of professional learning opportunities.
--
+
+--
 
 To reach our team, please contact [Hannah](https://directory.library.duke.edu/staff/hannah.rozear), [Aria](https://www.linkedin.com/in/ariachernik/), or [Remi](https://www.linkedin.com/in/jeremiah-kalir-phd/).
 
