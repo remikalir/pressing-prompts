@@ -18,6 +18,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Long-token safety net. Author-written content (topic data, blog posts,
+   references) can contain URLs, DOIs, and other unbreakable strings. Without
+   this, a single long token overflows its container and widens the whole
+   document on narrow viewports. Note that this alone does NOT fix long tokens
+   inside flex children — those also need `min-width: 0` on the child, because
+   the flex automatic minimum size floors the child at its min-content width.
+   See the comment in components/topic/ConversationStarters.jsx. */
+body {
+  overflow-wrap: break-word;
+}
+
 a {
   color: inherit;
   text-decoration: none;

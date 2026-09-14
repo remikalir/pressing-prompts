@@ -44,6 +44,7 @@ export default function ConversationStarters({ starters, colors }) {
               padding: "12px 16px",
               background: T.bgWarm,
               borderRadius: "10px",
+              minWidth: 0,
             }}
           >
             <span
@@ -67,6 +68,24 @@ export default function ConversationStarters({ starters, colors }) {
                 lineHeight: 1.6,
                 color: T.text1,
                 flex: 1,
+                // ─── Long-token containment ───
+                // Prompt text is author-written and can contain URLs, DOIs, or
+                // other unbreakable tokens. Three properties, each load-bearing:
+                //
+                // minWidth: 0 — flex children default to `min-width: auto`,
+                //   which floors them at their min-content width. A 44-char URL
+                //   pushes that floor past a phone viewport, the row grows, and
+                //   the whole document overflows horizontally. `flex: 1` does
+                //   not prevent this; the zero flex-basis is overridden by the
+                //   automatic minimum size. This is the actual fix.
+                // overflowWrap: "anywhere" — permits a break inside the token
+                //   and, unlike `break-word`, also reduces the min-content size
+                //   so the flex floor stays small.
+                // wordBreak: "break-word" — legacy fallback for Safari < 15.4,
+                //   which predates `overflow-wrap: anywhere`.
+                minWidth: 0,
+                overflowWrap: "anywhere",
+                wordBreak: "break-word",
               }}
             >
               {s.prompt}
