@@ -11,7 +11,7 @@ export const needContent = {
   },
 
   introduction: [
-    "From concerns about AI's impact on the environment to the disruptive role it has on human work, learning, and creativity, not everyone is on board with AI. Some argue that the growing tech oligarchy at OpenAI, Meta, Google, and X, are exploiting humans for profit gains. Some fear that in the quest for \"efficiency\" AI will displace human workers with sub-par work (aka AI slop). This section provides readings, discussions, and questions for instructors who **do not** want to introduce *use of* AI in their classrooms but would like their students to think critically about AI's impacts on society.",
+    "From the public backlash to the construction of data centers[^2] to the disruptive role AI continues to have on learning and creativity, not everyone is on board with AI. Some critics argue that the AI industry is exploiting humans for profit gains.[^3] College students across the country are protesting commencement speakers[^4] and pushing back on their university administration's embrace of the technology.[^5] Students are becoming increasingly skeptical of AI's benefits despite their growing adoption of it.[^6] This section provides readings, discussions, and questions for instructors who **do not** want to introduce *use of* AI in their classrooms but would like their students to think critically about AI's impacts on society and consider the reasons why some might object to it.",
   ],
 
   keyTerms: [
@@ -127,6 +127,13 @@ export const needContent = {
     { id: "cs-need-3", prompt: "What are some small, practical ways you could see yourself limiting (or opting out entirely) of AI use in your daily life? What difficulties would you face? What benefits might come from this stance?" },
     { id: "cs-need-4", prompt: "Pick a setting in which the use of AI makes you particularly uncomfortable. Discuss your reasons for being wary of AI in this setting. Ex. Healthcare, Schools, Government, Entertainment (tv, movies), Criminal Justice, Journalism, etc." },
     { id: "cs-need-5", prompt: "Why is it difficult to imagine our world without AI?" },
+    {
+      id: "cs-need-6",
+      prompt: "Tech journalist and author Karen Hao has put together the AI Resist List (link in topic resources), an effort to highlight actionable forms and movements of resistance to AI. Which of these actions resonate with you (if any)? Which of these acts of resistance surprised you?",
+      resources: [
+        { title: "The AI Resist List", url: "https://airesistlist.org/" },
+      ],
+    },
   ],
 
 
@@ -145,6 +152,11 @@ export const needContent = {
 
   pageNotes: [
     { id: 1, text: "Interview with Joy Buolamwini in: Mosley, T. (2023, November 28). [\"If you have a face, you have a place in the conversation about AI\"](https://www.npr.org/2023/11/28/1215529902/unmasking-ai-facial-recognition-technology-joy-buolamwini). *NPR*." },
+    { id: 2, text: "Goldmacher, S. (2026, August 23). [The Data Center Backlash Bursts Into the Midterms](https://www.nytimes.com/2026/08/23/us/politics/data-centers-midterm-elections.html). *The New York Times*." },
+    { id: 3, text: "Hao, K. (2025). [*Empire of AI: Dreams and Nightmares in Sam Altman's OpenAI*](https://search.worldcat.org/title/1482119829). Penguin Press." },
+    { id: 4, text: "Yang, A., & Perlo, J. (2026, May 28). [Student commencement boos are a sign of wider AI woes](https://www.nbcnews.com/tech/tech-news/artificial-intelligence-students-pushback-commencement-booing-rcna345731). *NBC News*." },
+    { id: 5, text: "Winstead, L. (2026, September 6). ['Not going to back down': Hundreds gather to protest G20 Innovation Ministerial](https://dailytarheel.com/480337/university/university-g20-protests/). *The Daily Tar Heel*." },
+    { id: 6, text: "Gallup. (2026, April 8). [*Gen Z's AI Adoption Steady, but Skepticism Climbs*](https://news.gallup.com/poll/708224/gen-adoption-steady-skepticism-climbs.aspx); Fehr, C., & Saul, J. (2026). [Students as Conscientious Objectors to Generative AI](https://www.insidehighered.com/opinion/career-advice/teaching/2026/07/30/students-conscientious-objectors-gen-ai-opinion). *Inside Higher Ed.*" },
   ],
 
   disciplinaryExtensions: [

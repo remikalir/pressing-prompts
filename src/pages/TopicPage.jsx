@@ -498,6 +498,7 @@ export default function TopicPage() {
             Resources collapse-by-default when long. */}
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <TopicResources
+            conversationStarters={content.conversationStarters}
             activities={content.activities}
             furtherRecommendations={content.furtherRecommendations}
             colors={colors}
