@@ -11,10 +11,22 @@ sprint that picks it up and documents the sprint just closed — so this file
 documents Sprint 10. When citing it, cite the filename, not the sprint
 number.
 
-**How this fits with the rest of the documentation.** The current entry
-point to the project is `PRESSING_PROMPTS_CANONICAL_HANDOFF.md` (October 7,
-2026), which is held in the Claude project knowledge rather than in this
-repo. Where this file and that one disagree, this file is newer and wins.
+**How this fits with the rest of the documentation.** In October 2026
+the project moved from one Claude account to another. The bridge between
+them is `PRESSING_PROMPTS_CANONICAL_HANDOFF.md` (October 7, 2026), which
+consolidated the project's history and was checked line by line against
+this repo on that date. Where this file and that one disagree, this file
+is newer and wins.
+
+**The canonical handoff is deliberately not in this repo.** On October 16,
+2026, Remi decided not to commit it publicly. It is more candid than the
+sprint handoffs — about unreleased work, team deliberations, and how the
+collaboration runs — and it has already done its job. It is kept in four
+places: the Claude project's knowledge, a backup in Remi's work Google
+Drive, a message to Aria and Hannah, and a backup in Remi's local work
+files. Treat it as dated: it describes the project as of October 7, 2026,
+and from here on the handoffs in this folder, starting with this one, are
+the current record.
 §1 below **replaces** that document's §0.4 ("Get the code before you reason
 about it"), the file-upload steps in §12.2 (the working loop), and every
 statement there or in older handoffs that Claude never edits the repo or
