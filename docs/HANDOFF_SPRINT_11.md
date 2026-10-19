@@ -1,10 +1,10 @@
 # HANDOFF — SPRINT 11
 
 **Status: in progress.** This file is being written during the sprint it
-documents, starting October 16, 2026, on the `sprint-10-maintenance`
-branch. Sections are added as the work happens rather than all at once at
-the end. Until it is marked complete, treat it as a working record, not a
-finished handoff.
+documents, starting October 16, 2026. Sections are added as the work
+happens rather than all at once at the end. Until it is marked complete,
+treat it as a working record, not a finished handoff. §2 records what has
+been done and which branches are in use; §3 records open items.
 
 Naming follows the established convention: the file is named for the
 sprint that picks it up and documents the sprint just closed — so this file
@@ -27,6 +27,7 @@ Drive, a message to Aria and Hannah, and a backup in Remi's local work
 files. Treat it as dated: it describes the project as of October 7, 2026,
 and from here on the handoffs in this folder, starting with this one, are
 the current record.
+
 §1 below **replaces** that document's §0.4 ("Get the code before you reason
 about it"), the file-upload steps in §12.2 (the working loop), and every
 statement there or in older handoffs that Claude never edits the repo or
@@ -166,7 +167,132 @@ desktop app (Cowork). Each was learned in practice.
   was removed once delete permission was granted. **After any git command
   that writes — `checkout`, `switch`, `branch` — check that
   `.git/index.lock` does not exist.**
+- **Remi's global git config isn't visible from the shell.** The shell
+  has its own home directory, so `git config --show-origin user.email`
+  run there shows only the repo's own settings. To check which identity
+  commits will use, ask Remi to run it in his terminal.
 
 ---
+
+## 2. What Sprint 10 has done so far
+
+### 2.1 Maintenance batch — `97b28bd`, October 16
+
+The first work under the new arrangement cleared four small items the
+canonical handoff (§15) had carried forward for months:
+
+- **`docs/ILLUSTRATIONS.md` §9:** change-log entries for all four blog
+  heroes (launch, `tlai-conference-report`, `we-the-people-workshop`,
+  `fall-pedagogy-series`), plus a short preface saying they were logged
+  after the fact. Written from the shipped image files, with colors
+  sampled from the pixels, and each entry separating topic colors (the
+  washes) from background tints (threads, points, highlights).
+- **`docs/ILLUSTRATIONS.md` §10:** the stale "awaiting propagation" line
+  now matches §9.
+- **`README.md`:** project tree brought up to date; HashRouter, the
+  "stubbed" blog page, and the "Sprint 2" export controls corrected; short
+  Routing and Blog sections added; "Adding a topic" expanded from four
+  steps to six (icon registration, and the constellation symmetry check
+  at multiples of three).
+- **`src/content/blog/gitkeep`** deleted.
+
+### 2.2 This handoff — `f49529e` and `8a96b55`, October 16
+
+Started with §1, then amended to record the decision to keep the
+canonical handoff out of the public repo (see the header).
+
+### 2.3 Git identity — October 19
+
+Remi made his GitHub email private. Commits now use his GitHub noreply
+address, `269560113+remikalir@users.noreply.github.com`, set in his
+global git config. This repo had its own `user.email` setting (his Gmail
+address), which overrode the global one; it was removed so the global
+setting applies here. Commits before October 19 still carry the old
+address. **That history was deliberately left as it is** — the goal was
+to use the private address from now on, not to scrub the past, and
+rewriting history would change every commit hash.
+
+The rule that came out of this: if GitHub rejects a push because a
+commit exposes a private email, amend that unpushed commit with
+`git commit --amend --reset-author --no-edit` and push again. If the
+commits are already on GitHub, the config change is all that's needed.
+
+### 2.4 Branches
+
+- **`sprint-10-maintenance`** was merged into `main` on October 19 as a
+  fast-forward (no merge commit). The deploy ran green and the live site
+  was unchanged, as expected — every change was documentation. This
+  handoff update was made on the same branch afterward and will need
+  merging again.
+- **Content work** is moving to a separate conversation and a separate
+  branch, so maintenance and content stay apart. When that branch is
+  created, add it here.
+
+---
+
+## 3. Open items
+
+### 3.1 Surfaced during Sprint 10
+
+- **Blog hero washes lost their blur.** All four shipped heroes render
+  their washes as hard-edged translucent circles, though the generator
+  code asks for `feGaussianBlur`. The likely cause is that cairosvg,
+  which converts the SVG to an image, ignores blur filters; this is not
+  yet verified by execution, because cairosvg could not be installed in
+  the shell. Previews in a browser do show the blur, so what was approved
+  may have looked softer than what shipped. Decision needed before the
+  next hero: keep the hard-edged look, or restore the blur (for example
+  by blurring the wash layer in PIL after conversion). Recorded in the
+  `docs/ILLUSTRATIONS.md` change-log preface.
+- **The Google Docs export gotcha was lost from `docs/AUTHORING.md`.**
+  It was added on May 26 (`0757201`) — backslashes that the Docs →
+  Markdown export inserts before punctuation, which can crash the YAML
+  parser or show up as literal characters, with a `grep`/`sed` sweep and
+  a check for invisible characters. Commit `acef25a` (July 27) replaced
+  the guide with a version built on the May 22 text plus the new
+  trailing-whitespace entry, which dropped it. The most likely cause is
+  that the edit was made to an older copy of the guide, under the old
+  hand-back workflow. This answers the question in the canonical
+  handoff's §7.6 about a "third missing entry": it landed, then was
+  overwritten. The `too\!` artifact fixed in the August 18 post is the
+  exact case the lost entry covered. Restoring it can be folded into the
+  pending second gotchas entry (setext headings and export-flattened
+  punctuation), which still needs a decision on whether to add discrete
+  cases or a symptom-to-cause table.
+- **Inline photos in the We the People post** are 770–910 KB each;
+  `AUTHORING.md` asks for under 200 KB.
+- **`docs/ILLUSTRATIONS.md` §6** is still the Sprint 3 planning table.
+  Some proposed anchors never shipped (Trust's ended as a figure on the
+  bridge, not a lantern). Worth relabeling as historical or updating to
+  what shipped.
+- **The presentation deck template counts eleven topics.** It is in
+  regular classroom use, so it gets a planned update when Topic 12 ships
+  rather than a quick fix now. It lives outside the repo.
+- **`ILLUSTRATIONS_HANDOFF.md` §9** documents the blog hero path as
+  `public/blog/heroes/<slug>.png`; the real convention is
+  `public/blog/<slug>/hero.<ext>`. That file lives in the Claude project's
+  knowledge, not the repo. Deferred by Remi to the next revision of the
+  handoff documents, when he wants clarity on this detail first.
+
+### 3.2 Still open from the canonical handoff
+
+Unchanged by Sprint 10, listed so this file stands on its own:
+
+- **Topic 12, "What Should AI Decide?"** — paused one decision short of
+  the icon lock. Also carries the constellation symmetry fix, the palette
+  lock, the illustration, the share images, content integration, and a
+  documentation pass. The largest live thread.
+- **Per-post Open Graph cards** via build-time per-route HTML. All four
+  heroes are already 1200×675 and ready to serve as cards.
+- **An accessible in-site version of Hannah's flowchart PDF.**
+- **The `studentAIUse` / `scaffoldedVariant` field split** for
+  activities — useful regardless of K-12.
+- **The analytics decision** — Search Console recommended, not finalized.
+- Smaller deferred items: `pressingprompts.com` HTTPS, the outbound-arrow
+  glyph on local PDFs, inline links in starter prose, `ActivityCard`
+  title wrapping on mobile, a `T.type.sectionLong` token, smooth scrolling
+  for anchor links, the wildcard redirect 302 → 301, a glossary, and the
+  never-built icon-explainer page.
+- **K-12** remains paused by team decision.
 
 *Further sections will be added as Sprint 10 proceeds.*
