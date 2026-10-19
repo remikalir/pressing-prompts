@@ -217,7 +217,29 @@ commit exposes a private email, amend that unpushed commit with
 `git commit --amend --reset-author --no-edit` and push again. If the
 commits are already on GitHub, the config change is all that's needed.
 
-### 2.4 Branches
+### 2.4 Blog hero rendering decisions — October 19
+
+This closes the first open item that was in §3.1 ("Blog hero washes lost
+their blur"). Two decisions, both recorded in the `docs/ILLUSTRATIONS.md`
+change log:
+
+- **Hard-edged discs are the standard; no blur.** The cause was checked
+  by execution in the shell. ImageMagick's SVG renderer also drops
+  `feGaussianBlur`; librsvg (installed in the shell as a system library)
+  renders it correctly. cairosvg still could not be installed — the
+  shell's network blocks pip and npm — but its source implements no blur
+  filter, and leaving the filter out reproduces the shipped look exactly.
+  A side-by-side test showed that restoring the blur would also have
+  needed every wash opacity recalibrated, since blur spreads and dims the
+  color. Remi chose not to re-render four live heroes and to keep the
+  hard-edged look so the blog index stays consistent. The generator now
+  leaves the blur filter off blog hero washes, so Visualizer previews
+  match the rendered file. Topic illustrations are unaffected; they render
+  live in the browser, where blur works.
+- **PNG is the default.** All four shipped heroes are `hero.jpg` and stay
+  that way. New heroes ship as `public/blog/<slug>/hero.png`.
+
+### 2.5 Branches
 
 - **`sprint-10-maintenance`** was merged into `main` on October 19 as a
   fast-forward (no merge commit). The deploy ran green and the live site
@@ -225,8 +247,11 @@ commits are already on GitHub, the config change is all that's needed.
   handoff update was made on the same branch afterward and will need
   merging again.
 - **Content work** is moving to a separate conversation and a separate
-  branch, so maintenance and content stay apart. When that branch is
-  created, add it here.
+  branch, so maintenance and content stay apart.
+- **`post-2026-10-20`** — created October 19 from `main` (at `1713652`)
+  for the blog post publishing October 20 and its hero. Named for the
+  publication date because the slug waits on the final title. Also
+  carries the §2.4 documentation. Merge after the post is published.
 
 ---
 
@@ -234,16 +259,6 @@ commits are already on GitHub, the config change is all that's needed.
 
 ### 3.1 Surfaced during Sprint 10
 
-- **Blog hero washes lost their blur.** All four shipped heroes render
-  their washes as hard-edged translucent circles, though the generator
-  code asks for `feGaussianBlur`. The likely cause is that cairosvg,
-  which converts the SVG to an image, ignores blur filters; this is not
-  yet verified by execution, because cairosvg could not be installed in
-  the shell. Previews in a browser do show the blur, so what was approved
-  may have looked softer than what shipped. Decision needed before the
-  next hero: keep the hard-edged look, or restore the blur (for example
-  by blurring the wash layer in PIL after conversion). Recorded in the
-  `docs/ILLUSTRATIONS.md` change-log preface.
 - **The Google Docs export gotcha was lost from `docs/AUTHORING.md`.**
   It was added on May 26 (`0757201`) — backslashes that the Docs →
   Markdown export inserts before punctuation, which can crash the YAML
@@ -268,11 +283,23 @@ commits are already on GitHub, the config change is all that's needed.
 - **The presentation deck template counts eleven topics.** It is in
   regular classroom use, so it gets a planned update when Topic 12 ships
   rather than a quick fix now. It lives outside the repo.
-- **`ILLUSTRATIONS_HANDOFF.md` §9** documents the blog hero path as
-  `public/blog/heroes/<slug>.png`; the real convention is
-  `public/blog/<slug>/hero.<ext>`. That file lives in the Claude project's
-  knowledge, not the repo. Deferred by Remi to the next revision of the
-  handoff documents, when he wants clarity on this detail first.
+- **Update `ILLUSTRATIONS_HANDOFF.md` at its next revision.** That file
+  lives in the Claude project's knowledge, not the repo, and Remi has
+  deferred changes to the next revision of the handoff documents. When
+  that happens, it needs:
+  - **§9, hero path.** It documents `public/blog/heroes/<slug>.png`; the
+    real convention is `public/blog/<slug>/hero.<ext>`. Remi wants
+    clarity on this detail first.
+  - **The October 19 rendering decisions (§2.4).** Blog hero washes are
+    hard-edged translucent discs with no `feGaussianBlur`, and PNG is the
+    default format. Its Appendix A generator template and any guidance
+    that says blog hero washes are blurred should be brought in line,
+    with a note that topic illustrations keep their blur because they
+    render in the browser.
+  - **The same two points in `BLOG_HERO_ILLUSTRATIONS_BRIEFING.md`**,
+    also in project knowledge: its §4 table gives a blur value for
+    washes, and its §6 says Remi kept the PNGs, though all four shipped
+    heroes are JPEGs.
 
 ### 3.2 Still open from the canonical handoff
 
