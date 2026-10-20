@@ -167,6 +167,20 @@ desktop app (Cowork). Each was learned in practice.
   was removed once delete permission was granted. **After any git command
   that writes — `checkout`, `switch`, `branch` — check that
   `.git/index.lock` does not exist.**
+- **The shell's network blocks pip and npm.** Packages can't be
+  installed, including cairosvg. Two workarounds learned on October
+  19–20. For rendering blog heroes, librsvg is present as a system
+  library and can be called from Python through `ctypes` onto a pycairo
+  surface; ImageMagick's SVG renderer is not usable (it drops both blur
+  and opacity). For checking a post the way the site will render it,
+  copy the pure-JavaScript packages the blog uses (`marked`,
+  `front-matter`, and the latter's dependencies) from the repo's
+  `node_modules` into a scratch directory and run Node there — for
+  example, to confirm that single tildes in a post don't become
+  strikethrough (they don't in `marked` 18).
+- **The shell's scratch space doesn't persist.** `/tmp` was cleared
+  between October 19 and 20. Anything worth keeping goes in the repo or
+  in Claude's working folder.
 - **Remi's global git config isn't visible from the shell.** The shell
   has its own home directory, so `git config --show-origin user.email`
   run there shows only the repo's own settings. To check which identity
@@ -217,7 +231,7 @@ commit exposes a private email, amend that unpushed commit with
 `git commit --amend --reset-author --no-edit` and push again. If the
 commits are already on GitHub, the config change is all that's needed.
 
-### 2.4 Blog hero rendering decisions — October 19
+### 2.4 Blog hero rendering decisions — `4129bd5`, October 19
 
 This closes the first open item that was in §3.1 ("Blog hero washes lost
 their blur"). Two decisions, both recorded in the `docs/ILLUSTRATIONS.md`
@@ -239,19 +253,56 @@ change log:
 - **PNG is the default.** All four shipped heroes are `hero.jpg` and stay
   that way. New heroes ship as `public/blog/<slug>/hero.png`.
 
-### 2.5 Branches
+### 2.5 Faculty cohort CFP post — `a08777a` and `7a8cf17`, October 20
+
+**Published October 20, 2026** at
+`https://pressingprompts.org/blog/faculty-cohort-cfp`, as a cross-post of
+the CTL blog's call for participation in the spring 2027 *Pressing
+Prompts* Duke Faculty Cohort (applications due November 16). The CTL
+version went live first; the project version links to it. The first post
+made end to end under direct repo access.
+
+- **Hero:** `public/blog/faculty-cohort-cfp/hero.png`, the fifth blog
+  hero and the first made under the §2.4 decisions — hard-edged washes,
+  PNG. Composition *out and back*: a gathering at left with three open
+  loops out to three classroom washes and back, for a cohort that
+  gathers, scatters into classrooms to experiment, and returns to share.
+  Direction A of three, refined through sub-variations A1 and A2 to A1.
+  Its `docs/ILLUSTRATIONS.md` change-log entry records the composition,
+  the rejected directions, and one deliberate departure: thread opacity
+  `0.36`, louder than earlier heroes, which is not the new default. The
+  CTL post uses the same file as its social card image.
+- **Post:** `src/content/blog/2026-10-20-faculty-cohort-cfp.md`. Claude
+  created it from the text Remi pasted, converted to Markdown with no
+  wording changes and placeholders for the excerpt; Remi then wrote the
+  excerpt, the cross-post note, the contact footer, and the other
+  editorial changes. The post was parsed with the repo's own
+  `front-matter` and `marked` before each push (see §1.6).
+- **Commits:** `a08777a` (post, hero, change-log entry), merged into
+  `main` as a fast-forward; `7a8cf17` (Remi's eligibility wording fix),
+  committed directly on `main`.
+- **Generator:** the render script lives in Claude's working folder, not
+  the repo. Adding a `scripts/` home for hero generators was offered and
+  not yet decided.
+
+### 2.6 Branches
 
 - **`sprint-10-maintenance`** was merged into `main` on October 19 as a
   fast-forward (no merge commit). The deploy ran green and the live site
-  was unchanged, as expected — every change was documentation. This
-  handoff update was made on the same branch afterward and will need
-  merging again.
+  was unchanged, as expected — every change was documentation. The
+  later handoff commit on this branch (`1713652`) is also in `main`; the
+  branch is fully merged and can be deleted.
 - **Content work** is moving to a separate conversation and a separate
   branch, so maintenance and content stay apart.
 - **`post-2026-10-20`** — created October 19 from `main` (at `1713652`)
-  for the blog post publishing October 20 and its hero. Named for the
-  publication date because the slug waits on the final title. Also
-  carries the §2.4 documentation. Merge after the post is published.
+  for the October 20 post and its hero, and named for the publication
+  date because the slug waited on the final title. It carried the §2.4
+  documentation and the §2.5 post. Merged into `main` as a fast-forward
+  on October 20, then deleted locally and on GitHub. The pattern worked
+  and is worth repeating: one branch per post, merged when the post is
+  published.
+- **`sprint-10-handoff-update`** — created October 20 from `main` (at
+  `7a8cf17`) for this update to the handoff.
 
 ---
 
@@ -309,7 +360,7 @@ Unchanged by Sprint 10, listed so this file stands on its own:
   the icon lock. Also carries the constellation symmetry fix, the palette
   lock, the illustration, the share images, content integration, and a
   documentation pass. The largest live thread.
-- **Per-post Open Graph cards** via build-time per-route HTML. All four
+- **Per-post Open Graph cards** via build-time per-route HTML. All five
   heroes are already 1200×675 and ready to serve as cards.
 - **An accessible in-site version of Hannah's flowchart PDF.**
 - **The `studentAIUse` / `scaffoldedVariant` field split** for
