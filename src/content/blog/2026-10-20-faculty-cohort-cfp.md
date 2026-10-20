@@ -8,7 +8,7 @@ tags: [announcement, programming, ai-ethics]
 hero: /blog/faculty-cohort-cfp/hero.png
 heroAlt: "A dark field with a large warm sienna wash at left holding a cluster of small warm points around one larger glowing sienna point. Three faint sand-colored lines loop out from the cluster to three separate washes — a blue one just above and to the right, a green one at the far right, and a rose one below and to the right — each holding one small amber point among cool white and periwinkle points of varied size, then curve back into the cluster."
 ---
-This call for participation (CFP) is [cross-posted on the Duke CTL blog](https://ctl.duke.edu/blog/2026/10/cfp-pressing-prompts-duke-faculty-cohort-critical-pedagogy-and-ai/).
+This call for participation (CFP) is [cross-posted on the Duke CTL blog](https://ctl.duke.edu/blog/2026/10/cfp-pressing-prompts-duke-faculty-cohort-critical-pedagogy-and-ai/). This cohort-based professional learning opportunity is only open to Duke instructors of any rank teaching at the undergraduate or graduate level and across all disciplines.
 
 —
 ## Inviting Applications for the *Pressing Prompts* Duke Faculty Cohort: Critical Pedagogy and AI
